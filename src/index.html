@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
+    <title>WonderChat</title>
+</head>
+
+<body>
+    <nav class="w-full h-16 bg-[#010314] px-12 flex justify-between items-center fixed z-10">
+        <a href="" class="flex">
+            <svg width="51" height="27" viewBox="0 0 66 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 20.94C0 9.75218 9.06956 0.682617 20.2574 0.682617H45.7426C56.9304 0.682617 66 9.75218 66 20.94C66 32.1279 56.9304 41.1975 45.7426 41.1975H20.2574C16.4062 41.1975 12.806 40.1228 9.74029 38.2569C8.59174 37.5578 1.63704 42.1037 0.653465 41.1975C-0.174975 40.4342 4.94158 34.2467 4.24966 33.3559C1.58599 29.9266 0 25.6185 0 20.94Z"
+                    fill="url(#paint0_linear_207_324)" />
+                <path
+                    d="M46.9597 15.5554C47.1046 15.1926 47.6726 15.1841 47.825 15.5438C48.2911 16.6443 49.0679 18.2645 49.9038 19.1004C50.7011 19.8977 52.0842 20.5134 53.0735 20.8813C53.44 21.0176 53.4675 21.5903 53.1136 21.7567C52.1314 22.2186 50.7358 22.963 49.9038 23.795C49.0247 24.6741 48.2434 26.1824 47.7898 27.1674C47.6347 27.5042 47.1171 27.5042 46.962 27.1674C46.5084 26.1824 45.7271 24.6741 44.848 23.795C44.0073 22.9543 42.5911 22.2031 41.6075 21.7423C41.2566 21.5779 41.2794 21.0166 41.6415 20.8785C42.6251 20.5036 44.0209 19.8789 44.848 19.1004C45.784 18.2195 46.5276 16.6375 46.9597 15.5554Z"
+                    fill="white" fill-opacity="0.6" />
+                <circle cx="29.0002" cy="21.6829" r="4" fill="white" fill-opacity="0.6" />
+                <circle cx="16.0002" cy="21.6829" r="4" fill="white" fill-opacity="0.6" />
+                <defs>
+                    <linearGradient id="paint0_linear_207_324" x1="33.3267" y1="41.1975" x2="32.3465" y2="0.0291559"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#5599FF" />
+                        <stop offset="0.836794" stop-color="#7241FF" />
+                        <stop offset="1" stop-color="#8E66FF" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="font-semibold text-white ml-2">WONDER<i class="text-[#4467FF]">CHAT</i></span>
+        </a>
+
+        <ul class="flex text-white font-thin text-xs">
+            <li class="m-2"><a href="">Features</a></li>
+            <li class="m-2"><a href="">Pricing</a></li>
+            <li class="m-2"><a href="">Contact</a></li>
+            <li class="m-2"><a href="">Affiliates</a></li>
+        </ul>
+
+        <div class="w-[11.3rem] flex text-white justify-between">
+            <button
+                class="px-6 py-2 border border-gray-600 bg-[#010314] rounded-full text-xs font-thin hover:bg-gray-500 duration-300">Sign
+                In</button>
+            <div
+                class="w-auto h-auto bg-gradient-to-r from-[#4467FF] to-[#7241FF] rounded-full flex justify-center items-center p-[0.05rem]">
+                <button
+                    class="px-6 py-2 text-xs font-thin bg-[#010314] rounded-full hover:bg-transparent duration-300">Sign
+                    Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container pt-16">
+        <div class="w-full h-[160vh] bg-[#010314] flex justify-center items-start">
+            <div
+                class="w-10/12 h-[45%] bg-gradient-to-b from-[#010314] from-60% via-[#6633EE] via-90% to-[#FFFFFF] to-100% rounded-3xl flex flex-col mt-10 relative">
+                <div class="flex justify-center items-center text-[#627FFF] mb-6">
+                    <svg width="18" height="16" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M7.1579 0C7.1579 0 7.45991 2.81891 8.63629 3.99529C9.81267 5.17167 12.6316 5.47368 12.6316 5.47368C12.6316 5.47368 9.81267 5.7757 8.63629 6.95208C7.45991 8.12846 7.1579 10.9474 7.1579 10.9474C7.1579 10.9474 6.85589 8.12846 5.67951 6.95208C4.50313 5.7757 1.68422 5.47368 1.68422 5.47368C1.68422 5.47368 4.50313 5.17167 5.67951 3.99529C6.85589 2.81891 7.1579 0 7.1579 0ZM19.4737 4.10526C19.4737 4.10526 19.9267 8.33363 21.6913 10.0982C23.4558 11.8628 27.6842 12.3158 27.6842 12.3158C27.6842 12.3158 23.4558 12.7688 21.6913 14.5334C19.9267 16.2979 19.4737 20.5263 19.4737 20.5263C19.4737 20.5263 19.0207 16.2979 17.2561 14.5334C15.4915 12.7688 11.2632 12.3158 11.2632 12.3158C11.2632 12.3158 15.4915 11.8628 17.2561 10.0982C19.0207 8.33363 19.4737 4.10526 19.4737 4.10526ZM9.00589 17.3099C7.53542 15.8394 7.1579 12.3158 7.1579 12.3158C7.1579 12.3158 6.78039 15.8394 5.30991 17.3099C3.83944 18.7804 0.315796 19.1579 0.315796 19.1579C0.315796 19.1579 3.83944 19.5354 5.30991 21.0059C6.78039 22.4764 7.1579 26 7.1579 26C7.1579 26 7.53542 22.4764 9.00589 21.0059C10.4764 19.5354 14 19.1579 14 19.1579C14 19.1579 10.4764 18.7804 9.00589 17.3099Z"
+                            fill="url(#paint0_linear_1_904)" />
+                        <defs>
+                            <linearGradient id="paint0_linear_1_904" x1="2.16719" y1="2.05263" x2="29.2027" y2="4.55099"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0.0695937" stop-color="#4467FF" />
+                                <stop offset="0.816425" stop-color="#7241FF" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <p class="tracking-widest text-xs ml-2">WELCOME TO WONDERCHAT</p>
+                </div>
+                <h1 class="text-center text-white text-5xl font-medium px-44 mb-6">Instantly build an AI chatbot with
+                    your knowledge base</h1>
+                <p class="text-center text-white text-sm font-thin px-80 mb-8">Share your site link or upload any PDF
+                    file to create a ChatGPT
+                    powered custom chatbot in 5 minutes
+                </p>
+                <div class="flex justify-center text-white mb-20">
+                    <div
+                        class="w-auto h-auto mx-2 bg-gradient-to-r from-[#4467FF] to-[#7241FF] rounded-full flex justify-center items-center p-[0.05rem]">
+                        <button
+                            class="px-6 py-3 text-xs font-thin bg-[#010314] rounded-full hover:bg-transparent duration-300">Get
+                            started for free</button>
+                    </div>
+                    <button
+                        class="px-6 py-3 mx-2 border border-gray-600 bg-[#010314] rounded-full text-xs font-thin hover:bg-gray-500 duration-300 flex items-center"><svg
+                            xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled"
+                            width="14" height="14" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"
+                                stroke-width="0" fill="currentColor" />
+                        </svg>
+                        <p class="ml-1">Watch Video</p>
+                    </button>
+                </div>
+                <div class="w-full h-auto flex justify-center">
+                    <img class="w-[55rem]" src="img/dashboard.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-auto pt-28 pb-14 flex justify-center items-center bg-[#010314] text-white">
+            <div
+                class="w-8/12 h-80 bg-[#4467FF] shadow-[0px_0px_50px_-10px_rgb(114,65,255)] rounded-xl flex items-center">
+                <div class="w-full h-[99%] bg-[#010314] rounded-xl px-20 flex justify-around items-center">
+                    <div class="w-full flex justify-between items-center">
+                        <div>
+                            <h1 class="font-semibold text-3xl mb-4">Self-Serve Customer Support</h1>
+                            <p class="w-96 font-extralight text-sm mb-5">Ever since implementing Wonderchat on our site,
+                                I've seen up to a 70% reduction of customer support queries in my inbox.”</p>
+                            <p class="w-full h-[0.004rem] bg-white mb-4"></p>
+                            <div class="w-full flex">
+                                <img class="w-10 mr-3" src="img/user.png" alt="">
+                                <div class="leading-5">
+                                    <p class="uppercase">Bryce Conway <br>
+                                    <p class="text-xs font-extralight normal-case">Founder and CEO of 10xTravel</p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="w-60" src="img/chatbot.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-auto py-14 flex justify-center items-center bg-[#010314] text-white">
+            <div class="text-center px-44">
+                <h1 class="font-semibold text-3xl mb-12">Trusted by 100+ businesses</h1>
+                <table class="w-full table-fixed">
+                    <tbody>
+                        <tr>
+                            <td class="p-5 border border-[#2A2B3A]">Logo</td>
+                            <td class="p-5 border border-[#2A2B3A]">Logo</td>
+                            <td class="p-5 border border-[#2A2B3A]">Logo</td>
+                            <td class="p-5 border border-[#2A2B3A]">Logo</td>
+                            <td class="p-5 border border-[#2A2B3A]">Logo</td>
+                            <td class="p-5 border border-[#2A2B3A]">Logo</td>
+                        </tr>
+                        <tr>
+                            <td class="p-5 border border-[#2A2B3A]">Logo</td>
+                            <td class="p-5 border border-[#2A2B3A]">Logo</td>
+                            <td class="p-5 border border-[#2A2B3A]">Logo</td>
+                            <td class="p-5 border border-[#2A2B3A]">Logo</td>
+                            <td class="p-5 border border-[#2A2B3A]">Logo</td>
+                            <td class="p-5 border border-[#2A2B3A]">Logo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="w-full h-auto pt-14 pb-7 flex justify-center items-center bg-[#010314] text-white">
+            <div class="flex flex-col justify-center items-center text-center">
+                <h1 class="font-semibold text-3xl mb-6">5 minute set-up process</h1>
+                <p class="w-8/12 text-xs font-thin tracking-wide mb-8">Spend 5 minutes to get a ChatGPT powered chatbot
+                    that works 24/7 to help you engage and retain more users and boost conversions.</p>
+                <div class="flex justify-center text-white">
+                    <div
+                        class="w-auto h-auto mx-2 bg-gradient-to-r from-[#4467FF] to-[#7241FF] rounded-full flex justify-center items-center p-[0.05rem]">
+                        <button
+                            class="px-6 py-3 text-xs font-thin bg-[#010314] rounded-full hover:bg-transparent duration-300">Get
+                            started for free</button>
+                    </div>
+                    <button
+                        class="px-6 py-3 mx-2 border border-gray-600 bg-[#010314] rounded-full text-xs font-thin hover:bg-gray-500 duration-300 flex items-center"><svg
+                            xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled"
+                            width="14" height="14" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"
+                                stroke-width="0" fill="currentColor" />
+                        </svg>
+                        <p class="ml-1">Watch Video</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-auto py-7 flex flex-col justify-center items-center bg-[#010314] text-white">
+            <div
+                class="w-8/12 h-80 bg-[#4467FF] shadow-[0px_25px_50px_-10px_rgb(114,65,255)] rounded-xl flex items-center mb-6">
+                <div class="w-full h-[99%] bg-[#010314] rounded-xl px-8 flex justify-around items-center">
+                    <div class="w-full h-full flex justify-around items-center">
+                        <div
+                            class="w-5/12 h-4/5 bg-gradient-to-b from-[#010314] from-60% via-[#6633EE] via-90% to-[#FFFFFF] to-100% rounded-2xl flex justify-center items-end">
+                            <img class="w-72" src="img/marektcap.png" alt="">
+                        </div>
+                        <div class="w-6/12">
+                            <div class="flex justify-start text-[#627FFF] mb-2">
+                                <svg width="18" height="16" viewBox="0 0 28 26" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M7.1579 0C7.1579 0 7.45991 2.81891 8.63629 3.99529C9.81267 5.17167 12.6316 5.47368 12.6316 5.47368C12.6316 5.47368 9.81267 5.7757 8.63629 6.95208C7.45991 8.12846 7.1579 10.9474 7.1579 10.9474C7.1579 10.9474 6.85589 8.12846 5.67951 6.95208C4.50313 5.7757 1.68422 5.47368 1.68422 5.47368C1.68422 5.47368 4.50313 5.17167 5.67951 3.99529C6.85589 2.81891 7.1579 0 7.1579 0ZM19.4737 4.10526C19.4737 4.10526 19.9267 8.33363 21.6913 10.0982C23.4558 11.8628 27.6842 12.3158 27.6842 12.3158C27.6842 12.3158 23.4558 12.7688 21.6913 14.5334C19.9267 16.2979 19.4737 20.5263 19.4737 20.5263C19.4737 20.5263 19.0207 16.2979 17.2561 14.5334C15.4915 12.7688 11.2632 12.3158 11.2632 12.3158C11.2632 12.3158 15.4915 11.8628 17.2561 10.0982C19.0207 8.33363 19.4737 4.10526 19.4737 4.10526ZM9.00589 17.3099C7.53542 15.8394 7.1579 12.3158 7.1579 12.3158C7.1579 12.3158 6.78039 15.8394 5.30991 17.3099C3.83944 18.7804 0.315796 19.1579 0.315796 19.1579C0.315796 19.1579 3.83944 19.5354 5.30991 21.0059C6.78039 22.4764 7.1579 26 7.1579 26C7.1579 26 7.53542 22.4764 9.00589 21.0059C10.4764 19.5354 14 19.1579 14 19.1579C14 19.1579 10.4764 18.7804 9.00589 17.3099Z"
+                                        fill="url(#paint0_linear_1_904)" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_1_904" x1="2.16719" y1="2.05263" x2="29.2027"
+                                            y2="4.55099" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0.0695937" stop-color="#4467FF" />
+                                            <stop offset="0.816425" stop-color="#7241FF" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <p class="tracking-widest text-xs ml-1">HOW IT WORKS</p>
+                            </div>
+                            <div class="w-[23rem]">
+                                <h1 class="text-2xl font-medium mb-4">Share a link or PDF file</h1>
+                                <p class="font-thin text-md">By providing the link or PDF file to your knowledge base,
+                                    you can build an AI chatbot
+                                    that learns from the text on your website and answers all the questions about your
+                                    product.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-8/12 h-[27rem] grid grid-cols-2 gap-6">
+                <div class="h-auto py-[0.05rem] bg-[#627FFF] rounded-2xl shadow-[0px_0px_50px_-20px_rgb(114,65,255)]">
+                    <div
+                        class="h-full w-full p-8 bg-gradient-to-b from-[#010314] from-60% via-[#6633EE] via-90% to-[#FFFFFF] to-100% rounded-2xl flex flex-col justify-between items-start">
+                        <div class="w-full h-auto flex flex-col">
+                            <div class="flex justify-start text-[#627FFF] mb-2">
+                                <svg width="18" height="16" viewBox="0 0 28 26" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M7.1579 0C7.1579 0 7.45991 2.81891 8.63629 3.99529C9.81267 5.17167 12.6316 5.47368 12.6316 5.47368C12.6316 5.47368 9.81267 5.7757 8.63629 6.95208C7.45991 8.12846 7.1579 10.9474 7.1579 10.9474C7.1579 10.9474 6.85589 8.12846 5.67951 6.95208C4.50313 5.7757 1.68422 5.47368 1.68422 5.47368C1.68422 5.47368 4.50313 5.17167 5.67951 3.99529C6.85589 2.81891 7.1579 0 7.1579 0ZM19.4737 4.10526C19.4737 4.10526 19.9267 8.33363 21.6913 10.0982C23.4558 11.8628 27.6842 12.3158 27.6842 12.3158C27.6842 12.3158 23.4558 12.7688 21.6913 14.5334C19.9267 16.2979 19.4737 20.5263 19.4737 20.5263C19.4737 20.5263 19.0207 16.2979 17.2561 14.5334C15.4915 12.7688 11.2632 12.3158 11.2632 12.3158C11.2632 12.3158 15.4915 11.8628 17.2561 10.0982C19.0207 8.33363 19.4737 4.10526 19.4737 4.10526ZM9.00589 17.3099C7.53542 15.8394 7.1579 12.3158 7.1579 12.3158C7.1579 12.3158 6.78039 15.8394 5.30991 17.3099C3.83944 18.7804 0.315796 19.1579 0.315796 19.1579C0.315796 19.1579 3.83944 19.5354 5.30991 21.0059C6.78039 22.4764 7.1579 26 7.1579 26C7.1579 26 7.53542 22.4764 9.00589 21.0059C10.4764 19.5354 14 19.1579 14 19.1579C14 19.1579 10.4764 18.7804 9.00589 17.3099Z"
+                                        fill="url(#paint0_linear_1_904)" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_1_904" x1="2.16719" y1="2.05263" x2="29.2027"
+                                            y2="4.55099" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0.0695937" stop-color="#4467FF" />
+                                            <stop offset="0.816425" stop-color="#7241FF" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <p class="tracking-widest text-xs ml-1">HOW IT WORKS</p>
+                            </div>
+                            <div class="w-[23rem]">
+                                <h1 class="text-2xl font-medium mb-4">Customize Your Chatbot</h1>
+                                <p class="font-thin text-md">Set the role of your chatbot and profile photo of your
+                                    chatbot
+                                    to reflect your brand identity. Tailor its response length to what you like best.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-full h-auto">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-auto py-[0.05rem] bg-[#627FFF] rounded-2xl shadow-[0px_0px_50px_-20px_rgb(114,65,255)]">
+                    <div
+                        class="h-full w-full p-8 bg-gradient-to-b from-[#010314] from-60% via-[#6633EE] via-90% to-[#FFFFFF] to-100% rounded-2xl flex flex-col justify-between items-start">
+                        <div class="w-full h-auto flex flex-col">
+                            <div class="flex justify-start text-[#627FFF] mb-2">
+                                <svg width="18" height="16" viewBox="0 0 28 26" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M7.1579 0C7.1579 0 7.45991 2.81891 8.63629 3.99529C9.81267 5.17167 12.6316 5.47368 12.6316 5.47368C12.6316 5.47368 9.81267 5.7757 8.63629 6.95208C7.45991 8.12846 7.1579 10.9474 7.1579 10.9474C7.1579 10.9474 6.85589 8.12846 5.67951 6.95208C4.50313 5.7757 1.68422 5.47368 1.68422 5.47368C1.68422 5.47368 4.50313 5.17167 5.67951 3.99529C6.85589 2.81891 7.1579 0 7.1579 0ZM19.4737 4.10526C19.4737 4.10526 19.9267 8.33363 21.6913 10.0982C23.4558 11.8628 27.6842 12.3158 27.6842 12.3158C27.6842 12.3158 23.4558 12.7688 21.6913 14.5334C19.9267 16.2979 19.4737 20.5263 19.4737 20.5263C19.4737 20.5263 19.0207 16.2979 17.2561 14.5334C15.4915 12.7688 11.2632 12.3158 11.2632 12.3158C11.2632 12.3158 15.4915 11.8628 17.2561 10.0982C19.0207 8.33363 19.4737 4.10526 19.4737 4.10526ZM9.00589 17.3099C7.53542 15.8394 7.1579 12.3158 7.1579 12.3158C7.1579 12.3158 6.78039 15.8394 5.30991 17.3099C3.83944 18.7804 0.315796 19.1579 0.315796 19.1579C0.315796 19.1579 3.83944 19.5354 5.30991 21.0059C6.78039 22.4764 7.1579 26 7.1579 26C7.1579 26 7.53542 22.4764 9.00589 21.0059C10.4764 19.5354 14 19.1579 14 19.1579C14 19.1579 10.4764 18.7804 9.00589 17.3099Z"
+                                        fill="url(#paint0_linear_1_904)" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_1_904" x1="2.16719" y1="2.05263" x2="29.2027"
+                                            y2="4.55099" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0.0695937" stop-color="#4467FF" />
+                                            <stop offset="0.816425" stop-color="#7241FF" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <p class="tracking-widest text-xs ml-1">HOW IT WORKS</p>
+                            </div>
+                            <div class="w-[23rem]">
+                                <h1 class="text-2xl font-medium mb-4">Ready in 5 Minutes</h1>
+                                <p class="font-thin text-md">Wait for less than 5 minutes to have the Chatbot learn all
+                                    the information from the webpages of your website. Once done, you can instantly
+                                    converse with it.</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-auto">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-auto py-14 flex flex-col justify-center items-center bg-[#010314] text-white">
+            <h1 class="font-semibold text-3xl mb-10">FAQ’s</h1>
+            <div class="w-full flex justify-center">
+                <div class="p-5 flex justify-center items-center border border-[#2A2B3A]">
+                    <p>01</p>
+                </div>
+                <div class="w-3/5 p-5 flex justify-start items-center border border-[#2A2B3A]">
+                    <p>What is Wonderchat?</p>
+                </div>
+                <button class="p-5 flex justify-center items-center border border-[#2A2B3A]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 5l0 14" />
+                        <path d="M5 12l14 0" />
+                    </svg>
+                </button>
+            </div>
+            <div class="w-full flex justify-center">
+                <div class="p-5 flex justify-center items-center border border-[#2A2B3A]">
+                    <p>02</p>
+                </div>
+                <div class="w-3/5 p-5 flex justify-start items-center border border-[#2A2B3A]">
+                    <p>Does it support all languages?</p>
+                </div>
+                <button class="p-5 flex justify-center items-center border border-[#2A2B3A]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 5l0 14" />
+                        <path d="M5 12l14 0" />
+                    </svg>
+                </button>
+            </div>
+            <div class="w-full flex justify-center">
+                <div class="p-5 flex justify-center items-center border border-[#2A2B3A]">
+                    <p>03</p>
+                </div>
+                <div class="w-3/5 p-5 flex justify-start items-center border border-[#2A2B3A]">
+                    <p>Do I need to know code to use Wonderchat?</p>
+                </div>
+                <button class="p-5 flex justify-center items-center border border-[#2A2B3A]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 5l0 14" />
+                        <path d="M5 12l14 0" />
+                    </svg>
+                </button>
+            </div>
+            <div class="w-full flex justify-center">
+                <div class="p-5 flex justify-center items-center border border-[#2A2B3A]">
+                    <p>04</p>
+                </div>
+                <div class="w-3/5 p-5 flex justify-start items-center border border-[#2A2B3A]">
+                    <p>Will I be able to embed the chatbot into my website?</p>
+                </div>
+                <button class="p-5 flex justify-center items-center border border-[#2A2B3A]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 5l0 14" />
+                        <path d="M5 12l14 0" />
+                    </svg>
+                </button>
+            </div>
+            <div class="w-full flex justify-center">
+                <div class="p-5 flex justify-center items-center border border-[#2A2B3A]">
+                    <p>05</p>
+                </div>
+                <div class="w-3/5 p-5 flex justify-start items-center border border-[#2A2B3A]">
+                    <p>Can multiple team members in my organization manage my chatbots?</p>
+                </div>
+                <button class="p-5 flex justify-center items-center border border-[#2A2B3A]">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 5l0 14" />
+                        <path d="M5 12l14 0" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full h-auto py-7 flex justify-center items-center bg-[#010314] text-white">
+            <div class="w-3/5 h-auto py-[0.05rem] bg-[#627FFF] rounded-2xl relative">
+                <div
+                    class="flex flex-col justify-center items-center py-20 bg-gradient-to-b from-[#010314] from-60% via-[#6633EE] via-90% to-[#FFFFFF] to-100% rounded-2xl shadow-[0px_0px_50px_-10px_rgb(114,65,255)]">
+                    <h1 class="w-3/5 font-semibold text-3xl text-center mb-4">Maximize your support capacity without
+                        extra hiring</h1>
+                    <p class="w-3/5 font-thin text-xs text-center mb-4">Spend 5 minutes to get a ChatGPT powered chatbot
+                        that works 24/7 to help you engage and retain
+                        more
+                        users and boost conversions.</p>
+                    <div class="flex justify-center text-white">
+                        <div
+                            class="w-auto h-auto mx-2 bg-gradient-to-r from-[#4467FF] to-[#7241FF] rounded-full flex justify-center items-center p-[0.05rem]">
+                            <button
+                                class="px-6 py-3 text-xs font-thin bg-[#010314] rounded-full hover:bg-transparent duration-300">Get
+                                started for free</button>
+                        </div>
+                        <button
+                            class="px-6 py-3 mx-2 border border-gray-600 bg-[#010314] rounded-full text-xs font-thin hover:bg-gray-500 duration-300 flex items-center"><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-tabler icon-tabler-player-play-filled" width="14" height="14"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"
+                                    stroke-width="0" fill="currentColor" />
+                            </svg>
+                            <p class="ml-1">Watch Video</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-auto px-40 py-12 bg-[#010314] text-white flex justify-between items-center">
+            <div class="w-72 flex flex-col">
+                <svg class="mb-2" width="51" height="27" viewBox="0 0 66 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0 20.94C0 9.75218 9.06956 0.682617 20.2574 0.682617H45.7426C56.9304 0.682617 66 9.75218 66 20.94C66 32.1279 56.9304 41.1975 45.7426 41.1975H20.2574C16.4062 41.1975 12.806 40.1228 9.74029 38.2569C8.59174 37.5578 1.63704 42.1037 0.653465 41.1975C-0.174975 40.4342 4.94158 34.2467 4.24966 33.3559C1.58599 29.9266 0 25.6185 0 20.94Z"
+                        fill="url(#paint0_linear_207_324)" />
+                    <path
+                        d="M46.9597 15.5554C47.1046 15.1926 47.6726 15.1841 47.825 15.5438C48.2911 16.6443 49.0679 18.2645 49.9038 19.1004C50.7011 19.8977 52.0842 20.5134 53.0735 20.8813C53.44 21.0176 53.4675 21.5903 53.1136 21.7567C52.1314 22.2186 50.7358 22.963 49.9038 23.795C49.0247 24.6741 48.2434 26.1824 47.7898 27.1674C47.6347 27.5042 47.1171 27.5042 46.962 27.1674C46.5084 26.1824 45.7271 24.6741 44.848 23.795C44.0073 22.9543 42.5911 22.2031 41.6075 21.7423C41.2566 21.5779 41.2794 21.0166 41.6415 20.8785C42.6251 20.5036 44.0209 19.8789 44.848 19.1004C45.784 18.2195 46.5276 16.6375 46.9597 15.5554Z"
+                        fill="white" fill-opacity="0.6" />
+                    <circle cx="29.0002" cy="21.6829" r="4" fill="white" fill-opacity="0.6" />
+                    <circle cx="16.0002" cy="21.6829" r="4" fill="white" fill-opacity="0.6" />
+                    <defs>
+                        <linearGradient id="paint0_linear_207_324" x1="33.3267" y1="41.1975" x2="32.3465" y2="0.0291559"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#5599FF" />
+                            <stop offset="0.836794" stop-color="#7241FF" />
+                            <stop offset="1" stop-color="#8E66FF" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1 class="font-normal text-xl mb-2">We growing up your business with personal AI manager.</h1>
+                <p class="text-xs font-extralight">Wonderchat, 2023.</p>
+            </div>
+            <div class="grid grid-cols-4 gap-4">
+                <ul>
+                    <li class="font-normal text-sm mb-3">Platform</li>
+                    <li class="font-thin text-xs mb-3 text-[#77798F]"><a href="">Plans & Pricing</a></li>
+                    <li class="font-thin text-xs mb-3 text-[#77798F]"><a href="">Personal AI Manager</a></li>
+                    <li class="font-thin text-xs mb-3 text-[#77798F]"><a href="">AI Business Writer</a></li>
+                </ul>
+                <ul>
+                    <li class="font-normal text-sm mb-3">Company</li>
+                    <li class="font-thin text-xs mb-3 text-[#77798F]"><a href="">Blog</a></li>
+                    <li class="font-thin text-xs mb-3 text-[#77798F]"><a href="">Careers</a></li>
+                    <li class="font-thin text-xs mb-3 text-[#77798F]"><a href="">News</a></li>
+                </ul>
+                <ul>
+                    <li class="font-normal text-sm mb-3">Resources</li>
+                    <li class="font-thin text-xs mb-3 text-[#77798F]"><a href="">Documentation</a></li>
+                    <li class="font-thin text-xs mb-3 text-[#77798F]"><a href="">Papers</a></li>
+                    <li class="font-thin text-xs mb-3 text-[#77798F]"><a href="">Press Conferences</a></li>
+                </ul>
+                <ul>
+                    <li class="font-normal text-sm mb-3">Get the app</li>
+                    <li>
+                        <button
+                            class="w-full px-3 py-1 mb-2 border border-gray-600 bg-[#010314] rounded-full text-xs font-thin hover:bg-gray-500 duration-300 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-windows w-5 mr-1"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M17.8 20l-12 -1.5c-1 -.1 -1.8 -.9 -1.8 -1.9v-9.2c0 -1 .8 -1.8 1.8 -1.9l12 -1.5c1.2 -.1 2.2 .8 2.2 1.9v12.1c0 1.2 -1.1 2.1 -2.2 1.9z" />
+                                <path d="M12 5l0 14" />
+                                <path d="M4 12l16 0" />
+                            </svg> Windows
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            class="w-full px-3 py-1 border border-gray-600 bg-[#010314] rounded-full text-xs font-thin hover:bg-gray-500 duration-300 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-apple-filled w-5 mr-1"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M15.079 5.999l.239 .012c1.43 .097 3.434 1.013 4.508 2.586a1 1 0 0 1 -.344 1.44c-.05 .028 -.372 .158 -.497 .217a4.15 4.15 0 0 0 -.722 .431c-.614 .461 -.948 1.009 -.942 1.694c.01 .885 .339 1.454 .907 1.846c.208 .143 .436 .253 .666 .33c.126 .043 .426 .116 .444 .122a1 1 0 0 1 .662 .942c0 2.621 -3.04 6.381 -5.286 6.381c-.79 0 -1.272 -.091 -1.983 -.315l-.098 -.031c-.463 -.146 -.702 -.192 -1.133 -.192c-.52 0 -.863 .06 -1.518 .237l-.197 .053c-.575 .153 -.964 .226 -1.5 .248c-2.749 0 -5.285 -5.093 -5.285 -9.072c0 -3.87 1.786 -6.92 5.286 -6.92c.297 0 .598 .045 .909 .128c.403 .107 .774 .26 1.296 .508c.787 .374 .948 .44 1.009 .44h.016c.03 -.003 .128 -.047 1.056 -.457c1.061 -.467 1.864 -.685 2.746 -.616l-.24 -.012z"
+                                    stroke-width="0" fill="currentColor" />
+                                <path d="M14 1a1 1 0 0 1 1 1a3 3 0 0 1 -3 3a1 1 0 0 1 -1 -1a3 3 0 0 1 3 -3z"
+                                    stroke-width="0" fill="currentColor" />
+                            </svg> MacOS
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="w-full h-12 px-36 bg-[#010314] text-[#77798F] flex justify-between items-center shadow-[0px_0px_200px_10px_rgb(114,65,255)]">
+        <div class="font-thin text-xs">
+            <p>© 2023 Wonderc hat. All rights reserved.</p>
+        </div>
+        <div class="font-thin text-xs">
+            <ul class="grid grid-cols-3 gap-4">
+                <li><a href="">Terms of Service</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Cookies</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
